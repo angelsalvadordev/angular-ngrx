@@ -1,0 +1,8 @@
+<div class="card">
+  <h2>{{ post.title }}</h2>
+  <span>UserId: {{ post.userId }}</span>
+  <span>{{ post.body }}</span >
+  <span>
+    <app-delete-post [index]="index"></app-delete-post>
+  </span>
+</div>

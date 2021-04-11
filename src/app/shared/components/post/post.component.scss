@@ -1,0 +1,13 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 0;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  padding: 1rem;
+
+  span {
+    display: block;
+  }
+}
