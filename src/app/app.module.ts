@@ -6,7 +6,7 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
-import { PostsReducer } from './shared/store/posts/posts.reducer';
+import { reducers } from './shared/store/store.state';
 import { EffectsModule } from '@ngrx/effects';
 import { PostEffects } from './shared/store/posts/posts.effects';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,7 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
     SharedModule,
-    StoreModule.forRoot({ post: PostsReducer }, {}),
+    StoreModule.forRoot(reducers, {}),
     EffectsModule.forRoot([PostEffects]),
   ],
   providers: [],

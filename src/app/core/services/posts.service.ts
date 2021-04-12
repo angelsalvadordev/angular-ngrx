@@ -16,7 +16,7 @@ export class PostsService {
   }
 
   addPost(post: Post) {
-    return this.http.post<Post | any>(`${this.api}/posts`, post, {
+    return this.http.post<Post>(`${this.api}/posts`, post, {
       responseType: 'json',
     });
   }

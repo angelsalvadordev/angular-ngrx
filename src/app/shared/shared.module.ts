@@ -12,7 +12,6 @@ import { ToastrModule } from 'ngx-toastr';
     ToastrModule.forRoot({
       timeOut: 7000,
       positionClass: 'toast-bottom-center',
-      preventDuplicates: true,
     }),
   ],
   exports: [PostComponent, PostsComponent],

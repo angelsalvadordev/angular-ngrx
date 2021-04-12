@@ -1,4 +1,4 @@
-import { Action } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 import { Post } from './posts.model';
 
 export enum PostActionTypes {
@@ -16,59 +16,58 @@ export enum PostActionTypes {
 }
 
 // GET POSTS
-export class GetPostsAction implements Action {
-  readonly type = PostActionTypes.GET_POSTS;
-}
+const getPosts = createAction(PostActionTypes.GET_POSTS);
 
-export class GetPostsSuccessAction implements Action {
-  readonly type = PostActionTypes.GET_POSTS_SUCCESS;
-  constructor(public payload: Post[]) {}
-}
+const getPostsSuccess = createAction(
+  PostActionTypes.GET_POSTS_SUCCESS,
+  props<{ payload: Post[] }>()
+);
 
-export class GetPostsFailureAction implements Action {
-  readonly type = PostActionTypes.GET_POSTS_FAILURE;
-  constructor(public payload: any) {}
-}
+const getPostsFailure = createAction(
+  PostActionTypes.GET_POSTS_FAILURE,
+  props<{ error: any }>()
+);
 
 // ADD POST
-export class AddPostAction implements Action {
-  readonly type = PostActionTypes.ADD_POST;
-  constructor(public payload: Post) {}
-}
+const addPost = createAction(
+  PostActionTypes.ADD_POST,
+  props<{ payload: Post }>()
+);
 
-export class AddPostSuccessAction implements Action {
-  readonly type = PostActionTypes.ADD_POST_SUCCESS;
-  constructor(public payload: Post[]) {}
-}
+const addPostSuccess = createAction(
+  PostActionTypes.ADD_POST_SUCCESS,
+  props<{ payload: Post }>()
+);
 
-export class AddPostFailureAction implements Action {
-  readonly type = PostActionTypes.ADD_POST_FAILURE;
-  constructor(public payload: any) {}
-}
+const addPostFailure = createAction(
+  PostActionTypes.ADD_POST_FAILURE,
+  props<{ error: any }>()
+);
 
 // DELETE POST
-export class DeletePostAction implements Action {
-  readonly type = PostActionTypes.DELETE_POST;
-  constructor(public payload: number) {}
-}
+const deletePost = createAction(
+  PostActionTypes.DELETE_POST,
+  props<{ payload: number }>()
+);
 
-export class DeletePostSuccessAction implements Action {
-  readonly type = PostActionTypes.DELETE_POST_SUCCESS;
-  constructor(public payload: Post[]) {}
-}
+const deletePostSuccess = createAction(
+  PostActionTypes.DELETE_POST_SUCCESS,
+  props<{ payload: any }>()
+);
 
-export class DeletePostFailureAction implements Action {
-  readonly type = PostActionTypes.DELETE_POST_FAILURE;
-  constructor(public payload: any) {}
-}
+const deletePostFailure = createAction(
+  PostActionTypes.DELETE_POST_FAILURE,
+  props<{ error: any }>()
+);
 
-export type PostAction =
-  | GetPostsAction
-  | GetPostsSuccessAction
-  | GetPostsFailureAction
-  | AddPostAction
-  | AddPostSuccessAction
-  | AddPostFailureAction
-  | DeletePostAction
-  | DeletePostSuccessAction
-  | DeletePostFailureAction;
+export const postActions = {
+  getPosts,
+  getPostsSuccess,
+  getPostsFailure,
+  addPost,
+  addPostSuccess,
+  addPostFailure,
+  deletePost,
+  deletePostSuccess,
+  deletePostFailure,
+};

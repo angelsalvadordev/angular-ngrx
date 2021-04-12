@@ -2,7 +2,7 @@
 <div class="posts">
   <p *ngIf="!(posts$ | async)?.length && !(loading$ | async)">No hay posts para mostrar...</p>
   <div class="posts_wrapper">
-    <app-post *ngFor="let post of posts$ | async; let i = index" [index]="i" [post]="post"></app-post>
+    <app-post *ngFor="let post of posts$ | async" [post]="post"></app-post>
   </div>
   <img *ngIf="loading$ | async" class="loading-icon" src="assets/images/sand-clock.png" alt="loading icon">
 </div>
