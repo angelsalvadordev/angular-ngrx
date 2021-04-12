@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { postActions } from '../../../core/store/posts/posts.actions';
+import { postActions } from 'src/app/core/store/posts';
 import AppState from './../../../core/models/app-state.model';
 
 @Component({
