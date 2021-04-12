@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { postActions } from './posts.actions';
 import { catchError, map, mergeMap } from 'rxjs/operators';
-import { PostsService } from './../../../core/services/posts.service';
+import { PostsService } from '../../services/posts.service';
 import { of } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 
@@ -20,7 +20,6 @@ export class PostEffects {
       mergeMap(() =>
         this.postService.getPosts().pipe(
           map((payload) => {
-            console.log('data ', payload);
             return postActions.getPostsSuccess({ payload });
           }),
           catchError((error) => {

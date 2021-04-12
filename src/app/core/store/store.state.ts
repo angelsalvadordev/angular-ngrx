@@ -1,5 +1,5 @@
 import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
-import AppState from './../../core/models/app-state.model';
+import AppState from '../models/app-state.model';
 import { postsReducer, PostsState } from './posts/posts.reducer';
 
 export const reducers: ActionReducerMap<AppState> = {

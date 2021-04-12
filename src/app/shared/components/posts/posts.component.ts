@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import AppState from 'src/app/core/models/app-state.model';
-import { postActions } from '../../store/posts/posts.actions';
-import { Post } from './../../store/posts/posts.model';
+import { postActions } from '../../../core/store/posts/posts.actions';
+import { Post } from '../../../core/store/posts/posts.model';
 import {
   selectPosts,
   selectPostsError,
   selectPostLoading,
-} from './../../store/posts/posts.selector';
+} from '../../../core/store/posts/posts.selector';
 
 @Component({
   selector: 'app-posts',

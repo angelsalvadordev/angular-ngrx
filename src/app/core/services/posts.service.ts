@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Post } from './../../shared/store/posts/posts.model';
+import { Post } from '../store/posts/posts.model';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +22,6 @@ export class PostsService {
   }
 
   deletePost(id: number) {
-    console.log('~ id', id);
     return this.http.delete<any>(`${this.api}/posts/${id}`, {
       responseType: 'json',
     });
