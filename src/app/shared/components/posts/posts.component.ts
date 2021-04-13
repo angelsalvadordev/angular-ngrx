@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import AppState from 'src/app/core/models/app-state.model';
+import AppState from 'src/app/core/models/app-state.interface';
+import { Post } from 'src/app/core/models/posts.interface';
 import {
-  Post,
   postActions,
   selectPostLoading,
   selectPosts,

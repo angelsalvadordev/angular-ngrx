@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { postActions } from 'src/app/core/store/posts';
-import AppState from './../../../core/models/app-state.model';
+import AppState from '../../../core/models/app-state.interface';
 
 @Component({
   selector: 'app-delete-post',

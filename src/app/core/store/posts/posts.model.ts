@@ -1,6 +1,7 @@
-export interface Post {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
+import { Post } from '../../models/posts.interface';
+
+export interface PostsState {
+  posts: Post[];
+  loading: boolean;
+  error: string | any;
 }

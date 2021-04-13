@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Post } from './posts.model';
+import { Post } from '../../models/posts.interface';
 
 export enum PostActionTypes {
   GET_POSTS = '[POSTS] Get posts',
